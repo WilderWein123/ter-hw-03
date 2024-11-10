@@ -5,17 +5,17 @@ resource "yandex_compute_disk" "storage_disk" {
   size = 1
 }
 
-resource "yandex_compute_instance" "storage" {
-  name     = var.vms.storage.name
+resource "yandex_compute_instance" "stor" {
+  name     = var.vms.stor.name
   platform_id = "standard-v1"
   resources {
-    cores         = var.vms.storage.cores
-    memory        = var.vms.storage.memory
-    core_fraction = var.vms.storage.core_fraction
+    cores         = var.vms.stor.cores
+    memory        = var.vms.stor.memory
+    core_fraction = var.vms.stor.core_fraction
   }
   boot_disk {
     initialize_params {
-      image_id = var.vms.storage.image
+      image_id = var.vms.stor.image
     }
   }
   scheduling_policy {

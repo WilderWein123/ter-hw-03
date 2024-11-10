@@ -4,3 +4,6 @@ src/.terraformrc
 src/.terraform.lock.hcl
 src/id_rsa
 src/id_rsa.pub
+src/.terraform.tfstate.lock.info
+src/terraform.tfstate
+src/terraform.tfstate.backup
