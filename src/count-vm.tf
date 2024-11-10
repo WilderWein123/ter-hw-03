@@ -1,4 +1,3 @@
-
 resource "yandex_compute_instance" "web" {
   depends_on = [ resource.yandex_compute_instance.db ]
   count = 2

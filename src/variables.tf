@@ -54,15 +54,15 @@ variable vms {
         cores = 2
         memory = 1
         core_fraction = 5
-        image = "ubuntu-2204-lts"
+        image = "fd833v6c5tb0udvk4jo6"
         network = "web-network"
       },
-      "storage" = {
-        name = "storage"
+      "stor" = {
+        name = "stor"
         cores = 2
         memory = 1
         core_fraction = 5
-        image = "ubuntu-2204-lts"
+        image = "fd833v6c5tb0udvk4jo6"
         network = "web-network"
     }
   }
@@ -75,6 +75,7 @@ variable "each_vm" {
       ram = number
       disk_volume = number
       core_fraction = number 
+      image = string
     }))
     default = [
       {
@@ -83,6 +84,7 @@ variable "each_vm" {
       ram = 2
       disk_volume = 10
       core_fraction = 5 
+      image = "fd833v6c5tb0udvk4jo6"
     },
       {
       vm_name="replica"
@@ -90,6 +92,7 @@ variable "each_vm" {
       ram = 2
       disk_volume = 20
       core_fraction = 5 
+      image = "fd833v6c5tb0udvk4jo6"
     }
   ]
 }

@@ -9,7 +9,7 @@ resource "yandex_compute_instance" "db" {
     }
     boot_disk {
       initialize_params {
-        image_id = var.vms.web.image
+        image_id = each.value.image
         size = each.value.disk_volume
       }
     }
