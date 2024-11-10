@@ -1,0 +1,6 @@
+src/personal.auto.tfvars
+src/personal.auto.tfvars_example
+src/.terraformrc
+src/.terraform.lock.hcl
+src/id_rsa
+src/id_rsa.pub
