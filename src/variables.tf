@@ -47,7 +47,9 @@ variable vms {
     core_fraction = number
     image = string
     network = string
-  }))
+    scheduling_policy = bool
+    platform_id = string
+    nat = bool  }))
     default = { 
       "web" = {
         name = "web"
@@ -56,6 +58,9 @@ variable vms {
         core_fraction = 5
         image = "fd833v6c5tb0udvk4jo6"
         network = "web-network"
+        scheduling_policy = "true"
+        platform_id = "standard-v1"
+        nat = "true"
       },
       "stor" = {
         name = "stor"
@@ -64,6 +69,9 @@ variable vms {
         core_fraction = 5
         image = "fd833v6c5tb0udvk4jo6"
         network = "web-network"
+        scheduling_policy = "true"
+        platform_id = "standard-v1"
+        nat = "true"
     }
   }
 }
@@ -76,6 +84,9 @@ variable "each_vm" {
       disk_volume = number
       core_fraction = number 
       image = string
+      scheduling_policy = bool
+      platform_id = string
+      nat = bool
     }))
     default = [
       {
@@ -85,6 +96,9 @@ variable "each_vm" {
       disk_volume = 10
       core_fraction = 5 
       image = "fd833v6c5tb0udvk4jo6"
+      scheduling_policy = "true"
+      platform_id = "standard-v1"
+      nat = true
     },
       {
       vm_name="replica"
@@ -93,6 +107,9 @@ variable "each_vm" {
       disk_volume = 20
       core_fraction = 5 
       image = "fd833v6c5tb0udvk4jo6"
+      scheduling_policy = "true"
+      platform_id = "standard-v1"
+      nat = true
     }
   ]
 }

@@ -7,7 +7,7 @@ resource "yandex_compute_disk" "storage_disk" {
 
 resource "yandex_compute_instance" "stor" {
   name     = var.vms.stor.name
-  platform_id = "standard-v1"
+  platform_id = var.vms.stor.platform_id
   resources {
     cores         = var.vms.stor.cores
     memory        = var.vms.stor.memory

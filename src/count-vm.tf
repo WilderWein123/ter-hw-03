@@ -2,7 +2,7 @@ resource "yandex_compute_instance" "web" {
   depends_on = [ resource.yandex_compute_instance.db ]
   count = 2
   name     = join("-", [var.vms.web.name, count.index+1])
-  platform_id = "standard-v1"
+  platform_id = var.vms.web.platform_id
   resources {
     cores         = var.vms.web.cores
     memory        = var.vms.web.memory
@@ -14,11 +14,12 @@ resource "yandex_compute_instance" "web" {
     }
   }
   scheduling_policy {
-    preemptible = true
+    preemptible = var.vms.web.scheduling_policy
   }
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
-    nat       = true
+    nat       = var.vms.web.nat
+    security_group_ids = [ yandex_vpc_security_group.example.id ]
   }
   
 
